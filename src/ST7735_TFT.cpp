@@ -77,6 +77,9 @@ void ST7735_TFT ::TFTResetPIN() {
 
 void ST7735_TFT ::TFTSetupGPIO(int8_t rst, int8_t dc, int8_t cs, int8_t sclk, int8_t din)
 {
+	/* Initialize and setting WiringPi */
+	wiringPiSetup();
+	
 if((cs != -1) && (sclk != -1) && (din != -1))
 {
 	_TFT_CS = cs;
